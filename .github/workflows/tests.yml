@@ -1,0 +1,25 @@
+name: test
+
+on: pull_request
+ 
+jobs:
+  build:
+	runs-on: ubuntu-latest
+
+	steps:
+  	- uses: actions/checkout@v3
+  	- uses: actions/setup-python@v4
+    	with:
+      	python-version: '3.11'
+
+  	- name: install deps
+    	run: pip install flake8 black pytest numpy tensorflow
+
+  	- name: format
+    	run: black --check src/
+
+  	- name: lint
+    	run: flake8 src/
+
+  	- name: test
+    	run: pytest src/tests/*
