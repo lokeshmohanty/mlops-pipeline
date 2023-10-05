@@ -3,6 +3,7 @@ import tensorflow.keras as keras
 
 model_filepath = "cifar10.keras"
 
+
 def test_model():
     (_, _), (test_images, test_labels) = keras.datasets.cifar10.load_data()
     test_images = test_images.astype('float32') / 255
