@@ -33,4 +33,6 @@ model.compile(optimizer='adam', loss=keras.losses.categorical_crossentropy, metr
 history = model.fit(train_images, train_labels, batch_size=64, epochs=1,
                     validation_data=(test_images, test_labels))
 
+print(test_labels[0])
+
 model.save(model_filepath)
