@@ -142,3 +142,6 @@ Test model
 
       assert predictions[predictions[0]] == 1
 #+end_src
+
+* Others
+- [[Setup a virtual environment using AWS EC2][./CLOUD-AWS.org]]
