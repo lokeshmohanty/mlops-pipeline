@@ -145,3 +145,4 @@ Test model
 
 * Others
 - [[./CLOUD-AWS.org][Setup a virtual environment using AWS EC2]]
+- [[./DOCKER.org][Setup a docker container]]

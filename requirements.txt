@@ -1,0 +1,8 @@
+numpy
+flake8
+pytest
+tensorflow
+fastapi
+pydantic
+uvicorn
+
