@@ -2,7 +2,10 @@ numpy
 flake8
 pytest
 tensorflow
+Pillow
+
 fastapi
 pydantic
 uvicorn
+python-multipart
 

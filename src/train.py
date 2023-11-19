@@ -1,7 +1,10 @@
 from tensorflow import keras
 from tensorflow.keras import Sequential, layers
+from pathlib import Path
 
-model_filepath = "cifar10.keras"
+Path("data").mkdir(parents=True, exist_ok=True)
+
+model_filepath = "data/cifar10.keras"
 
 data = keras.datasets.cifar10.load_data()
 (train_images, train_labels), (test_images, test_labels) = data
@@ -33,7 +36,8 @@ model.add(layers.Dense(num_classes, activation='softmax'))
 model.summary()
 
 model.compile(optimizer='adam',
-              loss=keras.losses.categorical_crossentropy, metrics=['accuracy'])
+              loss=keras.losses.categorical_crossentropy,
+              metrics=['accuracy'])
 
 history = model.fit(train_images, train_labels, batch_size=64, epochs=1,
                     validation_data=(test_images, test_labels))

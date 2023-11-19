@@ -1,14 +1,18 @@
 import numpy as np
 import tensorflow.keras as keras
+from src.app import predict
 
-model_filepath = "cifar10.keras"
-
+model = "data/cifar10.keras"
+image = "data/peregrine_falcon.jpg"
 
 def test_model():
-    (_, _), (test_images, test_labels) = keras.datasets.cifar10.load_data()
-    test_images = test_images.astype('float32') / 255
+    (train_images, train_labels), (_, _) = keras.datasets.cifar10.load_data()
+    train_images = train_images.astype('float32') / 255
 
-    model = keras.models.load_model(model_filepath)
-    predictions = np.argmax(model.predict(test_images), axis=1)
+    model = keras.models.load_model(model)
+    predictions = np.argmax(model.predict(train_images), axis=1)
 
-    assert predictions[0] == test_labels[0][0]
+    assert predictions[0] == train_labels[0][0]
+
+def test_api():
+    assert predict(image, model) == "truck"
