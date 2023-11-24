@@ -1,0 +1,41 @@
+#+title: Kubernetes
+
+* Orchestration
+
+* Minikube
+
+Usefull for testing kubernetes features in your local machine
+
+*Important Commands*:
+- Start: ~minikube start~
+- Dashboard: ~minikube dashboard~
+
+* Important commands
+
+- Create deployment from image
+
+  #+begin_src shell
+    kubectl create deployment <name> --image=<image>
+  #+end_src
+
+- Expose a nodeport for a service to access it from outside
+
+  #+begin_src shell
+    kubectl expose deployment <name> --type=NodePort --port=<host-port>
+  #+end_src
+
+- Update the image
+
+  #+begin_src shell
+    kubectl set image deployments/<name> <name>=<new-image>
+  #+end_src
+
+- Rollback the image
+
+  #+begin_src shell
+    kubectl set image deployments/<name> <name>=<previous-image>
+  #+end_src
+
+* References
+- [[https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/][Kubernetes]]
+- [[https://minikube.sigs.k8s.io/docs/tutorials/kubernetes_101/][Minikube]]
