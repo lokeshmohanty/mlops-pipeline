@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow.keras as keras
-from src.app import predict
+from src.run import predict
 
 model = "data/cifar10.keras"
 image = "data/peregrine_falcon.jpg"

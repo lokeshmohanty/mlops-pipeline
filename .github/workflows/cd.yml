@@ -1,0 +1,24 @@
+name: CD (docker, ssh)
+
+on: workflow_dispatch
+  # push:
+  #   branches: [ main ]
+
+jobs:
+  Deploy:
+    name: Deploy docker image to server
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4 
+      - name: Build image, send to server through ssh and run
+        env:
+          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          HOSTNAME: ${{ secrets.SSH_HOST }}
+          USER_NAME: ${{ secrets.USER_NAME }}
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          export TAG=$(git rev-parse --short HEAD)
+          docker build -t cicd:$TAG .
+          docker save cicd:$TAG | ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} sudo docker load
+          echo "sudo docker run -p 8080:80 cicd:$TAG" | ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}

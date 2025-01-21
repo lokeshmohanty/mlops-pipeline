@@ -1,9 +1,13 @@
-numpy
+# Dev requirements
 flake8
 pytest
+
+# Code requirements
+numpy
 tensorflow
 Pillow
 
+# API requirements
 fastapi
 pydantic
 uvicorn
