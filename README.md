@@ -2,11 +2,11 @@
 
 ## Contents
 
-  - Version Control System for Source Code (git, github)
-  - CI/CD (github-actions, docker, docker-compose, ClearML)
-  - Experiment Tracking (ClearML)
-  - Data VCS (ClearML)
-  - Model Serving and Monitoring (ClearML)
+  - Version Control System for Source Code ([git](https://git-scm.com/doc), [github](https://docs.github.com/en))
+  - CI/CD ([github-actions](https://docs.github.com/en/actions), [docker](https://docs.docker.com/), [docker-compose](https://docs.docker.com/compose/), [jenkins](https://www.jenkins.io/doc/))
+  - Experiment Tracking ([dvc](https://dvc.org/doc), [mlflow](https://mlflow.org/docs/latest/index.html), [wandb](https://docs.wandb.ai/), [clearml](https://clear.ml/docs/latest/docs/))
+  - Data VCS ([git-lfs](https://github.com/git-lfs/git-lfs/wiki?utm_source=gitlfs_site&utm_medium=wiki_link&utm_campaign=gitlfs), [dvc](https://dvc.org/doc), [clearml](https://clear.ml/docs/latest/docs/))
+  - Model Serving and Monitoring ([grafana](https://grafana.com/docs/grafana/latest/), [prometheus](https://prometheus.io/), [tensorboard](https://www.tensorflow.org/tensorboard))
 
 ## Github Actions
 
