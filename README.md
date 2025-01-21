@@ -3,9 +3,9 @@
 ## Contents
 
   - Version Control System for Source Code (git, github)
-  - CI/CD (github-actions, docker, docker-compose)
+  - CI/CD (github-actions, docker, docker-compose, ClearML)
   - Experiment Tracking (ClearML)
-  - Data VCS (dvc, ClearML)
+  - Data VCS (ClearML)
   - Model Serving and Monitoring (ClearML)
 
 ## Github Actions
@@ -131,4 +131,5 @@ Use docker to deploy the application
 
   - [Setup docker](./docker.md)
   - [Setup a virtual environment using AWS EC2](./cloud-aws.md)
+  - [Use ClearML](./clearml.md)
   - [Setup kubernetes](./kubernetes.md)

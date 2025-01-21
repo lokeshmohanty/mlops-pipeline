@@ -2,6 +2,8 @@ from tensorflow import keras
 from tensorflow.keras import Sequential, layers
 from pathlib import Path
 
+from clearml import Task
+
 Path("data").mkdir(parents=True, exist_ok=True)
 
 model_filepath = "data/cifar10.keras"
@@ -39,6 +41,12 @@ model.compile(optimizer='adam',
               loss=keras.losses.categorical_crossentropy,
               metrics=['accuracy'])
 
+
+task = Task.init(
+    project_name = "CIFAR10",
+    task_name = "Train CNN",
+    auto_connect_frameworks = { "keras": model_filepath }
+)
 history = model.fit(train_images, train_labels, batch_size=64, epochs=1,
                     validation_data=(test_images, test_labels))
 
