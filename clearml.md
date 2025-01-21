@@ -1,5 +1,10 @@
 # ClearML (End-to-End AI Platform)
 
+## [Initialization](https://clear.ml/docs/latest/docs/getting_started/ds/ds_first_steps)
+
+  - Connect clearml to a server using `clearml-init` command
+  - Paste the clearml credentials from the clearml server
+
 ## [Experiment Tracking](https://clear.ml/docs/latest/docs/fundamentals/task)
 ## [Data Versioning](https://clear.ml/docs/latest/docs/clearml_data/)
 
@@ -31,6 +36,9 @@ Example: [Basics](https://clear.ml/docs/latest/docs/clearml_data/data_management
 
 ## [Pipelines (CI/CD)](https://clear.ml/docs/latest/docs/pipelines/)
 ## [Model Serving and Monitoring](https://clear.ml/docs/latest/docs/clearml_serving/)
+
+  - [Serving](./serving/)
+
 ## References
 
   - [Website](https://clear.ml/)
