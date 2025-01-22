@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'clearml-serving'
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'clearml-inference-stats'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['clearml-serving-statistics:9999']

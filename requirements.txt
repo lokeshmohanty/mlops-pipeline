@@ -6,6 +6,7 @@ pytest
 numpy
 tensorflow
 Pillow
+clearml
 
 # API requirements
 fastapi

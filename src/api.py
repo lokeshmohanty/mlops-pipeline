@@ -1,12 +1,13 @@
-from typing import Union
 from fastapi import FastAPI, File, UploadFile
 from src.run import predict, model
 
 app = FastAPI()
 
+
 @app.get("/")
 def read_root():
     return {"Hi, CI/CD is working now. Lets improve it further"}
+
 
 @app.post("/upload")
 def upload(file: UploadFile = File(...)):
@@ -14,7 +15,7 @@ def upload(file: UploadFile = File(...)):
     try:
         contents = file.file.read()
         filename = file.filename
-        with open(file.filename, 'wb') as f:
+        with open(file.filename, "wb") as f:
             f.write(contents)
     except Exception:
         return {"message": "There was an error uploading the file"}
